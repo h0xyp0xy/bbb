@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Страница не найдена</title>
+
+        <link rel="icon" type="image/x-icon" href="{% static 'блокнотик.svg' %}">
+
+    </head>
+
+
+    <body>
+        
+        <div class="sales-funnel" style="margin-bottom: 100px;">
+
+            <div class="field">
+
+                <span>Посещений главной: {{ landing_visits }}</span>
+
+            </div>
+
+            <div class="field">
+
+                <span>Посещений регистрации: {{ register_visits }}</span>
+
+            </div>
+
+            <div class="field">
+
+                <span>Количество пользователей: {{ users }}</span>
+
+            </div>
+
+            <div class="field">
+
+                <span>Количество премиальных пользователей: {{ premium_users }}</span>
+
+            </div>
+
+        </div>
+
+        <div class="app-data">
+
+            <div class="field">
+
+                <span>Блокнотов: {{ notepads }}</span>
+
+            </div>
+
+            <div class="field">
+
+                <span>Заметок: {{ notes }}</span>
+
+            </div>
+            
+        </div>
+
+    </body>
+
+</html>
