@@ -6,10 +6,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '1231hj23i1hn23ui1g2uy3g2u7ydfhsofguy9'
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.bloknot-ik.ru']
-#LLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['.bloknot-ik.ru']
+ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -136,7 +137,13 @@ COMPRESS_PRECOMPILERS = (
 
 COMPRESS_OFFLINE = True
 LIBSASS_OUTPUT_STYLE = 'compressed'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
+STORAGES = {
+
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
 MEDIA_ROOT = 'media'
 MEDIA_URL = '/media/'

@@ -4,6 +4,6 @@ from .views import overview
 
 urlpatterns = [
 
-    path('@N@L', overview),
+    path('@N@L/', overview),
 
 ]
