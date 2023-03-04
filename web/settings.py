@@ -6,10 +6,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '1231hj23i1hn23ui1g2uy3g2u7ydfhsofguy9'
 
-DEBUG = True
+DEBUG = False
 
-#ALLOWED_HOSTS = ['.bloknot-ik.ru']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.bloknot-ik.ru']
+#ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
