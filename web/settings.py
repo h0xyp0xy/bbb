@@ -9,7 +9,7 @@ SECRET_KEY = '1231hj23i1hn23ui1g2uy3g2u7ydfhsofguy9'
 DEBUG = False
 
 ALLOWED_HOSTS = ['.bloknot-ik.ru']
-#ALLOWED_HOSTS = []
+#LLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',

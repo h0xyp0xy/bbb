@@ -236,10 +236,9 @@ def add_folder(request):
 @lr
 def remove_folder(request):
 
-    folder = Folder.objects.get(uid = request.POST.get('f'))
     note = Note.objects.get(uid = request.POST.get('n'))
 
-    note.folders.remove(folder)
+    note.folders.remove(Folder.objects.get(uid = request.POST.get('f')))
 
     return HttpResponse('K')
 

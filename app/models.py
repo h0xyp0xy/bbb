@@ -25,6 +25,10 @@ class Photo(m.Model):
 
     uploaded_at = m.DateTimeField(auto_now_add = True)
 
+    def __str__(self):
+
+        return self.uploader.profile.name
+
 class Note(m.Model):
 
     uid = m.UUIDField(default = u4) # unique id
