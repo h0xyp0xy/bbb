@@ -8,7 +8,6 @@ django-appconf==1.0.5
 django-compressor==4.3.1
 django-libsass==0.9
 django-tinymce==3.5.0
-gunicorn==20.1.0
 idna==3.4
 libsass==0.22.0
 netaddr==0.8.0
