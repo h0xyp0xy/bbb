@@ -192,16 +192,24 @@ def get_folder(request, uid):
 
     folder = Folder.objects.get(uid = uid)
 
-    notes = Note.objects.filter(folders__in = [folder]).filter(deleted = False).filter(archived = False)
+    if folder.author == request.user:
 
-    c = {}
+        notes = Note.objects.filter(folders__in = [folder]).filter(deleted = False).filter(archived = False)
 
-    c['folder'] = folder
+        c = {}
 
-    c['pinned_notes'] = notes.filter(pinned = True)
-    c['other_notes'] = notes.filter(pinned = False)
+        c['folder'] = folder
 
-    return render(request, 'components/notes.html', c)
+        c['pinned_notes'] = notes.filter(pinned = True)
+        c['other_notes'] = notes.filter(pinned = False)
+
+        return render(request, 'components/notes.html', c)
+
+    else:
+
+        return redirect('/')
+
+    
 
 @lr
 def edit_folder(request):

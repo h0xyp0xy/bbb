@@ -4021,6 +4021,59 @@
 
     </script>
 
+    <script>
+
+        newLineHTML = `
+
+            <div><br></div>
+
+        `
+
+        $('body').on('keydown', function(e) {
+
+            if (e.keyCode === 9) {
+
+                e.preventDefault();
+
+                if ($('.current-note-content').is(':focus')) {
+
+                    var selection = window.getSelection();
+                    var range = selection.getRangeAt(0);
+                    var container = range.commonAncestorContainer;
+                    var nodeParent = container.parentNode;
+
+
+                    if (nodeParent.tagName == 'LI') {
+
+                        nodeParent = nodeParent.parentNode;
+                        document.execCommand('insertHTML', false, newLineHTML);
+                        
+                    }
+
+                    if (nodeParent.tagName == 'UL') {
+
+                        if (nodeParent.class == undefined) {
+                            
+                            document.execCommand('insertHTML', false, newLineHTML);
+
+                        }
+
+                    }
+
+                }
+
+                if (document.activeElement.class == 'current-note-content') {
+
+                    pass;
+
+                }
+                
+            }
+
+        });
+
+    </script>
+
     <!-- RTE -->
     <script>
 

@@ -4,11 +4,11 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = '1231hj23i1hn23ui1g2uy3g2u7ydfhsofguy9'
+SECRET_KEY = '1231hj23i1hn23ui1g2uy3g2u7ydfhsofguy9' # local
 
-DEBUG = False
+DEBUG = True # local
 
-ALLOWED_HOSTS = ['.bloknot-ik.ru']
+ALLOWED_HOSTS = ['.bloknot-ik.ru', '10.59.202.222', '127.0.0.1'] # local
 #ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
@@ -105,12 +105,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe/Moscow'
+TIME_ZONE = 'Europe/Moscow' # local
 
 USE_I18N = True
 
 USE_TZ = True
-
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
@@ -142,7 +141,7 @@ LOGOUT_REDIRECT_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'bloknotikk@gmail.com'
-EMAIL_HOST_PASSWORD = 'lrwnusiruhyxxekv' # localize this
+EMAIL_USE_TLS = True # local
+#EMAIL_HOST_USER = 'kosyakovsn@gmail.com'
+#EMAIL_HOST_PASSWORD = 'gigharagfknceknq' # local
 #DEFkosyakovsn AULT_FROM_EMAIL = 'bloknotikk@gmail.com'

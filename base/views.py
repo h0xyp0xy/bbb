@@ -3,6 +3,35 @@ from django.shortcuts import render, HttpResponse
 from .models import Info, Message
 from analytics.models import Funnel
 
+
+def payments_http(request):
+
+    if request.METHOD == 'POST':
+        pass
+
+
+""" 
+185.71.76.0/27
+185.71.77.0/27
+77.75.153.0/25
+77.75.156.11
+77.75.156.35
+77.75.154.128/25
+2a02:5180::/32 """
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
 def l(request):
 
     if request.user.is_authenticated:
@@ -173,3 +202,4 @@ def plans(request):
     c['u'] = u
 
     return render(request, 'info/plans.html', c)
+
