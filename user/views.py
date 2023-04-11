@@ -86,15 +86,13 @@ def register(request):
         user = authenticate(username = username, password = password)
         login(request, user)
 
-        
-
         return redirect('/home/')
 
     return render(request, 'auth/register.html')
 
 def invited_register(request, premium_invite_uid):
 
-    invited_profile = Profile.objects.filter(premium_invite_uid = premium_invite_uid)
+    invited_profile = Profile.objects.get(premium_invite_uid = premium_invite_uid)
 
     if invited_profile.invited_friends.all().count() == 2 or not invited_profile.premium:
 

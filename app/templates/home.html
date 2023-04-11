@@ -45,7 +45,7 @@
 
                         <span class="cta-text">Пишите сколько угодно!</span>
 
-                        <button id="upgradeBtn">Улучшить за 47₽/мес</button>
+                        <button id="upgradeBtn">Улучшить за 97₽/мес</button>
 
                     </div>
 
@@ -67,9 +67,13 @@
 
                         <img src="{% static 'img/friends_working.avif' %}">
 
-                        <span class="cta-text-friend">Вместе веселее!</span>
-                        <span class="cta-text-invite">Пригласите двух друзей по этой ссылке и они получат премиум <u>бесплатно</u>!</u></span>
+                        <div class="invite-explanation">
 
+                            <span class="cta-text-friend">Вместе веселее!</span>
+                            <span class="cta-text-invite">Отправьте эту ссылку двум друзьям.<br><br>Они получат премиум <u>бесплатно</u>!</u></span>
+
+                        </div>
+                        
                         <div class="invite-link">
 
                             <input type="text" id="inviteLink" value="bloknot-ik.ru/register/{{ profile.premium_invite_uid }}/" />
@@ -1030,6 +1034,8 @@
 
         $('#copyLinkBtn').click(function() {
 
+            $(this).addClass('active');
+
             $('#inviteLink').select();
             document.execCommand('copy');
             document.getSelection().removeAllRanges();
@@ -1854,6 +1860,18 @@
 
     <!-- New note -->
     <script>
+
+        /* Switch from title to content */
+
+        $('body').on('keyup', function(e) {
+
+            if (e.keyCode === 9) {
+
+                $('#newNoteContentCE').focus();
+
+            }
+
+        });
         
         /* Extension & Condensation */
 
@@ -2002,7 +2020,7 @@
         });
 
             /* Pin */
-        $('#newNotePinned').click(function() {
+        $('#newNotePin').click(function() {
 
             $('#newNotePinned').prop('checked', !$('#newNotePinned').prop('checked'));
 
@@ -2167,12 +2185,13 @@
             setTimeout(function() {
 
                 $('.new-note-folders-form').hide();
+                $('.new-note-folder-search').val('');
+                $('.new-note-folder-list').hide();
+                $('.create-new-folder-from-search').hide();
                 
             }, 250);
 
-            $('.new-note-folder-search').val('');
-            $('.new-note-folder-list').hide();
-            $('.create-new-folder-from-search').hide();
+            
 
             newFolderFormSearchOpen = false;
 

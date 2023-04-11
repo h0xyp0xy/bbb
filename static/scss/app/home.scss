@@ -728,21 +728,29 @@ svg {
 
         }
 
-        .cta-text-friend {
+        .invite-explanation {
 
-            position: relative;
-            left: 49px;
-            bottom: 200px;
+            text-align: center;
 
-            font-size: 22px;
-            font-weight: bold;
+            .cta-text-friend {
 
-        }
+                position: relative;
 
-        .cta-text-invite {
-
-            position: relative;
-            bottom: 180px;
+                bottom: 200px;
+    
+                font-size: 22px;
+                font-weight: bold;
+    
+            }
+    
+            .cta-text-invite {
+    
+                position: relative;
+                bottom: 180px;
+    
+                text-align: center;
+    
+            }
 
         }
 
@@ -798,7 +806,9 @@ svg {
         .invite-link {
 
             position: relative;
-            bottom: 150px;
+            bottom: 160px;
+
+            text-align: center;
 
             input {
 
@@ -830,6 +840,13 @@ svg {
 
             }
 
+            #copyLinkBtn.active {
+
+                box-shadow: inset 3px 3px 8px #d8cec4,
+                    inset -3px -3px 8px #fffffa;
+
+            }
+
         }
         
     }
@@ -842,7 +859,7 @@ svg {
 
         position: relative;
 
-        width: 300px;
+        width: 400px;
         height: 350px;
 
         padding: 20px;
@@ -945,7 +962,7 @@ svg {
 
                     float: left;
 
-                    width: 190px;
+                    width: 300px;
 
                     padding: 26px 50px 20px 60px;
 
@@ -2432,8 +2449,8 @@ svg {
 
             border-radius: 100px;
 
-            box-shadow: inset 4px 4px 8px #0e1011,
-                inset -4px -4px 8px #1c1e1f;
+            box-shadow: inset 3px 3px 8px #d8cec4,
+                inset -3px -3px 8px #fffffa;
 
         }
 
@@ -2651,6 +2668,39 @@ body.dark {
 
         color: $dark-placeholder;
     
+    }
+
+    .premium-offer {
+
+        .invite-link {
+
+            input {
+
+                box-shadow: inset 4px 4px 8px #0e1011,
+                    inset -4px -4px 8px #1c1e1f;
+
+            }
+    
+            #copyLinkBtn.active {
+    
+                box-shadow: inset 4px 4px 8px #0e1011,
+                    inset -4px -4px 8px #1c1e1f;
+    
+            }
+    
+        }
+
+    }
+
+    .notes {
+
+        #emptyTrashBtn.active {
+
+            box-shadow: inset 4px 4px 8px #0e1011,
+                inset -4px -4px 8px #1c1e1f;
+        
+        }
+
     }
 
     .wrapper {

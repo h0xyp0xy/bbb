@@ -58,6 +58,40 @@ button:disabled {
 
 }
 
+@keyframes change-color {
+    0% {
+      background-color: #FFD54F;
+    }
+    33% {
+      background-color: #FF6F61;
+    }
+    66% {
+
+        background-color: #FFB347;
+    }
+    100% {
+      background-color: #FFD54F;
+    }
+  }
+
+.circle {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 650px;
+    height: 650px;
+
+    filter: blur(200px);
+
+    border-radius: 500px;
+
+    animation: change-color 10s infinite;
+}
+
 
 .main {
 
@@ -77,6 +111,8 @@ button:disabled {
         width: 340px;
 
         background: rgb(246, 246, 246);
+        box-shadow:  3px 3px 10px #d1d1d1,
+            -3px -3px 10px #ffffff;
 
         border-radius: 20px;
 
@@ -132,7 +168,7 @@ button:disabled {
             text-align: center;
 
             font-weight: normal;
-            font-size: 25px;
+            font-size: 24px;
             margin: 0;
 
         }
@@ -158,6 +194,8 @@ button:disabled {
                         position: absolute;
                         left: 15px;
                         top: 16px;
+
+                        cursor: pointer;
 
                     }
 
@@ -191,11 +229,11 @@ button:disabled {
 
                     input {
             
-                        width: calc(100% - 30px);
+                        width: 225px;
                         height: 47px;
             
                         margin-bottom: 15px;
-                        padding: 6px 20px 0 50px;
+                        padding: 6px 35px 0 50px;
 
                         color: #6e7267;
                         
@@ -281,7 +319,7 @@ button:disabled {
             .btns {
 
                 position: relative;
-                top: 40px;
+                top: 30px;
 
                 a {
 
@@ -320,76 +358,63 @@ button:disabled {
 
         }
 
+        .oauth2 {
+
+            position: relative;
+            top: 30px;
+            left: 20px;
+
+            h4 {
+
+                position: relative;
+                top: 20px;
+                left: 65px;
+
+                margin: 0;
+
+                font-weight: normal;
+
+            }
+
+            div {
+
+                position: relative;
+                top: 35px;
+
+                width: 40px;
+                height: 40px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                float: left;
+
+                margin: 0 10px 0 10px;
+
+                border-radius: 50px;
+                
+                box-shadow:  1px 1px 10px #a0a0a0,
+                        -1px -1px 10px #ffffff;
+
+                cursor: pointer;
+
+            }
+
+        }
+
     }
 
 }
 
-
 .wrapper.register {
 
-    height: 550px;
+    height: 650px;
 
     .btns.register {
 
         top: 15px;
 
     }
-
-}
-
-
-/* Gradient */
-
-:root {
-	--gradient-shadow: linear-gradient(
-		45deg,
-		#fb0094,
-		#0000ff,
-		#00ff00,
-		#ffff00,
-		#ff0000,
-		#fb0094,
-		#0000ff,
-		#00ff00,
-		#ffff00,
-		#ff0000
-	);
-}
-
-.wrapper:before,
-.wrapper:after {
-
-	content: "";
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	background: var(--gradient-shadow);
-	background-size: 400%;
-	width: calc(100% + 4px);
-	height: calc(100% + 4px);
-	z-index: -1;
-	animation: animate 20s linear infinite;
-
-    border-radius: 20px;
-
-}
-
-.wrapper:after {
-
-	filter: blur(100px);
-
-}
-
-@keyframes animate {
-
-	0% {
-		background-position: 0 0;
-	}
-	50% {
-		background-position: 300% 0;
-	}
-	100% {
-		background-position: 0 0;
-	}
 
 }

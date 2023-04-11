@@ -26,9 +26,7 @@ class Profile(m.Model):
 
     password_recovery_token = m.TextField(blank = True, null = True)
 
-    def __str__(self):
-        
-        return self.name
+
 
     class Meta:
 

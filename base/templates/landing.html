@@ -228,12 +228,6 @@
 
         /* Circle animation */
 
-        function randomColor(){
-
-            return "#" + ((Math.random() * 16777215) | 0).toString(16);
-
-        }
-
         function randomNumFromInterval(min, max) {
 
             return Math.random() * (max - min) + min;
@@ -246,14 +240,10 @@
 
             if (scale == 'big') {
 
-                $('.big').css('background-color', randomColor());
-
                 scale = randomNumFromInterval(1, 1.3);
                 $('.big').css('transform', 'scale(' + scale + ')');
 
                 await delay(3000);
-
-                $('.big').css('background-color', randomColor());
 
                 scale = randomNumFromInterval(0.7, 1);
                 $('.big').css('transform', 'scale(' + scale + ')');
@@ -261,28 +251,20 @@
 
             } else if (scale == 'medium') {
 
-                $('.medium').css('background-color', randomColor());
-
                 scale = randomNumFromInterval(1, 1.6);
                 $('.medium').css('transform', 'scale(' + scale + ')');
 
                 await delay(1500);
-
-                $('.medium').css('background-color', randomColor());
 
                 scale = randomNumFromInterval(0.6, 1);
                 $('.medium').css('transform', 'scale(' + scale + ')');
 
             } else {
 
-                $('.small').css('background-color', randomColor());
-
                 scale = randomNumFromInterval(1, 1.9);
                 $('.small').css('transform', 'scale(' + scale + ')');
 
                 await delay(1000);
-
-                $('.small').css('background-color', randomColor());
 
                 scale = randomNumFromInterval(0.1, 1);
                 $('.small').css('transform', 'scale(' + scale + ')');
