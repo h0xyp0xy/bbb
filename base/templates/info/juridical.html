@@ -24,6 +24,8 @@
 
         {% endcompress %}
 
+        <script src="{% static 'packages/jquery-3.6.1.min.js' %}"></script>
+
     </head>
 
     <body>
@@ -149,7 +151,7 @@
                     <tr>
 
                         <td>Номер телефона</td>
-                        <td>+79162893225</td>
+                        <td>+7-916-289-32-25</td>
 
                     </tr>
 
@@ -242,5 +244,22 @@
         }
 
     </style>
+
+    <script>
+
+        $('.auth-btn').click(function() {
+
+            $(this).addClass('in');
+
+        });
+
+        $('.term').click(function() {
+
+            $('.term').removeClass('active');
+            $(this).addClass('active');
+
+        });
+
+    </script>
 
 </html>

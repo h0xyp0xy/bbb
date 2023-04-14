@@ -1,10 +1,36 @@
 $text-color: #1E2330;
 
+html {
+
+    padding-bottom: 100px;
+
+}
+
 body {
 
     margin: 0;
 
     overflow-x: hidden;
+
+}
+
+::-webkit-scrollbar {
+    
+    width: 10px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    border-radius: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: $text-color;
+    border-radius: 50px;
 
 }
 
@@ -72,14 +98,7 @@ body {
 
         display: inline-block;
 
-        .auth-btn.in {
-
-            box-shadow: inset 1px 1px 4px #b9b9b7,
-                inset -1px -1px 4px #ffffff;
-
-        }
-
-        div {
+        .auth-btn {
 
             position: relative;
 
@@ -143,6 +162,13 @@ body {
 
         }
 
+        .auth-btn.in {
+
+            box-shadow: inset 1px 1px 4px #b9b9b7,
+                inset -1px -1px 4px #ffffff;
+
+        }
+
         a {
 
             text-decoration: none;
@@ -169,9 +195,9 @@ body {
 
         position: fixed;
         top: 160px;
-        left: 50px;
+        left: 20px;
 
-        width: calc(30% - 50px);
+        width: calc(30% - 70px);
 
         float: left;
 
@@ -179,15 +205,11 @@ body {
 
             text-decoration: none;
             color: initial;
-            width: 450px;
+            width: 100%;
 
             div {
 
-                width: 450px;
-                height: 40px;
-
-                display: flex;
-                align-items: center;
+                width: 100%;
 
                 padding: 10px;
                 margin-bottom: 20px;
@@ -196,12 +218,18 @@ body {
                 box-shadow:  1px 1px 4px #b9b9b7,
                             -1px -1px 4px #ffffff;
 
+                
+                word-wrap: break-word;
+
                 h1 {
 
                     font-weight: normal;
                     font-size: 23px;
 
                     margin-left: 20px;
+
+                    padding-top: 5px;
+
 
                 }
 
@@ -212,9 +240,7 @@ body {
                 box-shadow:  inset 1px 1px 4px #b9b9b7,
                             inset -1px -1px 4px #ffffff;
     
-            }
-
-            
+            }            
 
         }
 
@@ -230,7 +256,6 @@ body {
 
         float: right;
         padding: 20px;
-        
 
         border-radius: 20px;
 

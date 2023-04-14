@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse
 
-from .models import Info, Message
+from .models import Message
 from analytics.models import Funnel
 
 
@@ -27,10 +27,6 @@ def payments_http(request):
 
 
 
-
-
-
-        
 
 def l(request):
 
@@ -105,14 +101,7 @@ def t(request):
 
         u = False
 
-    c = {}
-
-    c['u'] = u
-
-    c['d'] = Info.objects.get(title = 'Договор-оферта')
-    c['i'] = 't'
-
-    return render(request, 'info/terms.html', c)
+    return render(request, 'info/terms.html', {'u': u})
 
 def p(request):
 
@@ -124,14 +113,7 @@ def p(request):
 
         u = False
 
-    c = {}
-
-    c['u'] = u
-
-    c['d'] = Info.objects.get(title = 'Политика конфиденциальности')
-    c['i'] = 'p'
-
-    return render(request, 'info/terms.html', c)
+    return render(request, 'info/privacy.html', {'u': u})
 
 def j(request):
 

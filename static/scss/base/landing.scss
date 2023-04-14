@@ -454,30 +454,6 @@ body, html {
 
     }
 
-    .social-media {
-
-        position: absolute;
-        top: 34px;
-        right: 32px;
-
-        div {
-
-            cursor: pointer;
-
-            transform: scale(1);
-
-            transition: all 0.5s ease-in-out;
-
-        }
-
-        div:hover {
-
-            transform: scale(1.2);
-
-        }
-
-    }
-
 }
 
 @media screen and (max-width: 1330px) {

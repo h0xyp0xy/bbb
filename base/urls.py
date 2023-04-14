@@ -10,8 +10,6 @@ urlpatterns = [
 
     path('$/', payments_http),
 
-    path('plans/', plans, name = 'pl'),
-
     path('contact-us/', c, name = 'c'),
     path('c/', cs, name = 'cs'),
 

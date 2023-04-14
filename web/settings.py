@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '1231hj23i1hn23ui1g2uy3g2u7ydfhsofguy9' # local
 
-DEBUG = False # local
+DEBUG = True # local
 
 ALLOWED_HOSTS = ['bloknot-ik.ru', '77.220.141.41', '127.0.0.1', 'localhost'] # local
 #ALLOWED_HOSTS = []
