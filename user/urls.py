@@ -16,6 +16,8 @@ urlpatterns = [
     path('register/', register, name = 'register'),
     path('register/<str:premium_invite_uid>/', invited_register, name = 'invited-register'),
 
+    #OAuth2
+
     path('confirm-email/', ce, name = 'ce'), # Email confirmation
 
     # Password recovery
