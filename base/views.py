@@ -1,8 +1,6 @@
 from django.shortcuts import render, HttpResponse
 
 from .models import Message
-from analytics.models import Funnel
-
 
 def payments_http(request):
 
@@ -37,15 +35,6 @@ def l(request):
     else:
 
         u = False
-
-    if not Funnel.objects.filter(stage = '0').filter(ip = request.headers['host']).exists():
-
-        Funnel.objects.create(
-
-            stage = '0',
-            ip = request.headers['host'],
-
-        )
 
     return render(request, 'landing.html', {'u': u, 'ip': request.headers['host']})
 

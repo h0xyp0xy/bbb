@@ -10,7 +10,6 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
 from user.models import Profile
-from analytics.models import Funnel
 
 import string
 import random
@@ -43,15 +42,6 @@ def log_in(request):
 
 def register(request):
 
-    if not Funnel.objects.filter(stage = '1').filter(ip = request.headers['host']).exists():
-
-        Funnel.objects.create(
-
-            stage = '1',
-            ip = request.headers['host'],
-
-        )
-
     if request.method == 'POST':
 
         name = request.POST.get('n')
@@ -76,12 +66,6 @@ def register(request):
 
         user.profile.premium_invite_uid = uid
         user.profile.save()
-
-        subject = 'Добро пожаловать в Блокнотик!'
-        message = f'Здравствуйте, {user.profile.name}!\n\nМы рады приветствовать вас у себя на сайте.\n\nЕсли у вас возникнет любой вопрос, пожалуйста, задайте его нам написав по этому адресу.\n\nНу все, пописали!\n\nС уважением,\nКоманда Блокнотика'
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = [user.username]
-        send_mail(subject, message, email_from, recipient_list)
 
         user = authenticate(username = username, password = password)
         login(request, user)

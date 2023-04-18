@@ -11,7 +11,6 @@ DEBUG = True # local
 ALLOWED_HOSTS = ['bloknot-ik.ru', '77.220.141.41', '127.0.0.1', 'localhost'] # local
 #ALLOWED_HOSTS = []
 
-
 DJANGO_APPS = [
 
     'django.contrib.admin',
@@ -26,9 +25,8 @@ DJANGO_APPS = [
 PROJECT_APPS = [
 
     'base',
-    'analytics',
-    'app',
     'user',
+    'app',
 
 ]
 
@@ -40,31 +38,7 @@ THIRD_PARTY_APPS = [
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
-
-print(INSTALLED_APPS)
-
-""" 
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_METHODS = (
-
-    'GET',
-    'POST',
-    'PUT',
-    'PATCH',
-    'DELETE',
-    'OPTIONS',
-
-) """
-
-AUTHENTICATION_BACKENDS = (
-
-    'django.contrib.auth.backends.ModelBackend', # бекенд классической аутентификации, чтобы работала авторизация через обычный логин и пароль
-  
-    'social_core.backends.yandex.YandexOAuth2', # бекенд авторизации через Яндекс
-    'social_core.backends.vk.VKOAuth2', # бекенд авторизации через ВКонтакте
-) 
-
+ 
 MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
@@ -172,7 +146,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/login/'
 LOGOUT_REDIRECT_URL = '/'
 
-# email
+# EMAIL
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -181,12 +155,3 @@ EMAIL_USE_TLS = True # local
 #EMAIL_HOST_USER = 'kosyakovsn@gmail.com'
 #EMAIL_HOST_PASSWORD = 'gigharagfknceknq' # local
 #DEFkosyakovsn AULT_FROM_EMAIL = 'bloknotikk@gmail.com'
-
-
-SOCIAL_AUTH_VK_OAUTH2_KEY = '51609135'
-SOCIAL_AUTH_VK_OAUTH2_SECRET = 'RsKt6CO0oSR4efHeiLQr'
-SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email']
-
-SOCIAL_AUTH_YANDEX_OAUTH2_KEY = '93639dbecb764e2aae0f55b67b416e61'
-SOCIAL_AUTH_YANDEX_OAUTH2_SECRET = '37f59f3dc19b4d53bf51c931c1baf09b'
-
