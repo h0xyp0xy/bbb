@@ -59,7 +59,7 @@
 
                 </a>
     
-                <h1>Войти в Блокнотик</h1>
+                <h1>Войти в <b>Блокнотик</b></h1>
 
                 <form method="POST">
 
@@ -118,7 +118,7 @@
 
                     {% endif %}
 
-                    <a href="{% url 'user:forgot-password' %}">Не помню пароль</a>
+                   <!--  <a href="/forgot-password/">Не помню пароль</a> -->
     
                     <div class="btns">
 
@@ -146,7 +146,7 @@
 
             .wrapper {
                         
-                height: 620px;            
+                height: 500px;            
                     
             }
 
@@ -158,7 +158,7 @@
 
             .wrapper {
                         
-                height: 590px;            
+                height: 470px;            
                     
             }
 
@@ -196,27 +196,21 @@
 
     </style>
 
-    <!-- OAUTH2 -->
-
     <script>
 
-        $('.oauth2-path').click(function() {
+        $('button, #na').click(function() {
 
-            var path = $(this);
+            btn = $(this);
 
-            path.addClass('in');
+            btn.addClass('in');
 
             setTimeout(function() {
 
-                path.removeClass('in');
+                btn.removeClass('in');
 
             }, 250);
 
         });
-
-    </script>
-
-    <script>
 
         $('#email, #lock').click(function() {
 
@@ -300,6 +294,13 @@
         
         }
 
+        function validateEmail(e) {
+
+            var re = /\S+@\S+\.\S+/;
+            return re.test(e);
+
+        }
+
         var e, p;
 
         function v() {
@@ -315,27 +316,6 @@
             }
 
         }
-
-        function validateEmail(e) {
-
-            var re = /\S+@\S+\.\S+/;
-            return re.test(e);
-
-        }
-
-        $('button, #na').click(function() {
-
-            btn = $(this);
-
-            btn.addClass('in');
-
-            setTimeout(function() {
-
-                btn.removeClass('in');
-
-            }, 250);
-
-        })
 
         /* Email */
 

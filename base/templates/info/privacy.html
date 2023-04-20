@@ -52,7 +52,7 @@
                 
                     {% if u %}
                 
-                        <a href="{% url 'app:app' %}">
+                        <a href="/home/">
                 
                             <div class="auth-btn" id="homeBtn">
                 
@@ -66,7 +66,7 @@
                 
                         </a>
                 
-                        <a href="{% url 'user:logout' %}">
+                        <a href="/logout/">
                 
                             <div class="auth-btn" id="logoutBtn">
                 
@@ -82,7 +82,7 @@
                 
                     {% else %}
                 
-                        <a href="{% url 'user:login' %}">
+                        <a href="/login/">
                 
                             <div class="auth-btn" id="loginBtn">
                 
@@ -104,7 +104,7 @@
 
             <div class="sidenav">
 
-                <a href="{% url 'base:t' %}" class="term-link">
+                <a href="/terms/" class="term-link">
 
                     <div class="term">
 
@@ -114,7 +114,7 @@
 
                 </a>
 
-                <a href="{% url 'base:p'%}" class="term-link">
+                <a href="/privacy/" class="term-link">
 
                     <div class="term active">
 
@@ -124,7 +124,7 @@
 
                 </a>
 
-                <a href="{% url 'base:j'%}" class="term-link">
+                <a href="/juridical-information/" class="term-link">
 
                     <div class="term">
 

@@ -3,6 +3,8 @@ from django.urls import path
 from django.contrib.auth.views import LogoutView
 from .views import *
 
+from .password_views import *
+
 from django.conf import settings
 
 app_name = 'user'
@@ -15,7 +17,10 @@ urlpatterns = [
     path('register/', register, name = 'register'),
     path('register/<str:premium_invite_uid>/', invited_register, name = 'invited-register'),
 
-    #OAuth2
+    # Reset Password
+    path('forgot-password/', forgot_password, name = 'forgot-password'),
+    path('recover-password/', recover_password, name = 'recover-password'),
+    path('reset-password/<uuid:uid>/', reset_password, name = 'reset-password'),
 
     path('confirm-email/', ce, name = 'ce'), # Email confirmation
 

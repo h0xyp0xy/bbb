@@ -40,13 +40,20 @@ def l(request):
 
 # Contact
 
-def c(request):
+def contact_us(request):
+
+    c = {}
     
     if request.user.is_authenticated:
+
+        c['name'] = request.user.profile.name
+        c['user'] = request.user
         
-        return render(request, 'contact.html', {'n': request.user.profile.name, 'u': request.user})
+        return render(request, 'contact.html', )
     
     else:
+
+        c['user'] = request.user
         
         return render(request, 'contact.html', {'u': request.user})
     
@@ -80,7 +87,7 @@ def cs(request):
 
 # Info
 
-def t(request):
+def terms(request):
 
     if request.user.is_authenticated:
 
@@ -92,7 +99,7 @@ def t(request):
 
     return render(request, 'info/terms.html', {'u': u})
 
-def p(request):
+def privacy(request):
 
     if request.user.is_authenticated:
 
@@ -104,7 +111,7 @@ def p(request):
 
     return render(request, 'info/privacy.html', {'u': u})
 
-def j(request):
+def juridical(request):
 
     if request.user.is_authenticated:
 

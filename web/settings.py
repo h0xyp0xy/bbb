@@ -33,7 +33,6 @@ PROJECT_APPS = [
 THIRD_PARTY_APPS = [
 
     'compressor',
-    'tinymce',
 
 ]
 

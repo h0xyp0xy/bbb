@@ -10,14 +10,14 @@ urlpatterns = [
 
     path('$/', payments_http),
 
-    path('contact-us/', c, name = 'c'),
+    path('contact-us/', contact_us, name = 'contact-us'),
     path('c/', cs, name = 'cs'),
 
-    path('terms/', t, name = 't'),
-    path('privacy/', p, name = 'p'),
-    path('juridical-information/', j, name = 'j'),
-    path('data-safety/', ds, name = 'ds'),
-    path('payment-safety/', ps, name = 'ps'),
+    path('terms/', terms),
+    path('privacy/', privacy),
+    path('juridical-information/', juridical),
+    #path('data-safety/', ds, name = 'ds'),
+    #path('payment-safety/', ps, name = 'ps'),
     
     #path('online-payment-safety/', ops, name = 'ops'),
     #path('data-safety/', ds, name = 'ds'),

@@ -114,12 +114,6 @@ def invited_register(request, premium_invite_uid):
             user.profile.premium_invite_uid = uid
             user.profile.save()
 
-            subject = 'Добро пожаловать в Блокнотик!'
-            message = f'Здравствуйте, {user.profile.name}!\n\nМы рады приветствовать вас у себя на сайте.\n\nЕсли у вас возникнет любой вопрос, пожалуйста, задайте его нам написав по этому адресу.\n\nНу все, пописали!\n\nС уважением,\nКоманда Блокнотика'
-            email_from = settings.EMAIL_HOST_USER
-            recipient_list = [user.username]
-            send_mail(subject, message, email_from, recipient_list)
-
             user = authenticate(username = username, password = password)
             login(request, user)
 

@@ -3,25 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="ru">
-
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(93212200, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
-    });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/93212200" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-
+    
     <head>
 
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -33,7 +15,7 @@
         <meta property="og:title" content="Блокнотик" />
         <meta property="og:description" content="Устали от скучных и неудобных блокнотов? Попробуйте Блокнотик - современный онлайн блокнот, который превратит работу в удовольствие." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="" />
+<!--         <meta property="og:image" content="" /> -->
 
         <title>Блокнотик</title>
 
@@ -83,7 +65,7 @@
                     
                         {% if u %}
                     
-                            <a href="{% url 'app:app' %}">
+                            <a href="/home/">
                     
                                 <div class="auth-btn" id="homeBtn">
                     
@@ -97,7 +79,7 @@
                     
                             </a>
                     
-                            <a href="{% url 'user:logout' %}">
+                            <a href="/logout/">
                     
                                 <div class="auth-btn" id="logoutBtn">
                     
@@ -113,7 +95,7 @@
                     
                         {% else %}
                     
-                            <a href="{% url 'user:login' %}">
+                            <a href="/login/">
                     
                                 <div class="auth-btn" id="loginBtn">
                     
@@ -174,7 +156,7 @@
                     
                            <li>
                     
-                               <a href="{% url 'base:t' %}" class="link" target="_blank">
+                               <a href="/terms/" class="link" target="_blank">
                                     
                                     Информация
                     
@@ -221,7 +203,8 @@
 
     <script>
 
-        /* Btn logic */
+        /* Btn pop in/out */
+        
         $('.auth-btn, #regBtn').click(function() {
 
             btn = $(this);

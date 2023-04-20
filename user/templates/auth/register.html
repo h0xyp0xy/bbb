@@ -37,20 +37,23 @@
 
             <div class="wrapper register">
 
-                <div class="brand">
+                <a href="/">
+
+                    <div class="brand">
     
-                    <div class="wrapper">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="19.394" height="28.21" viewBox="0 0 19.394 28.21">
-                            <path id="Icon_awesome-lightbulb" data-name="Icon awesome-lightbulb" d="M5.293,25.033a1.764,1.764,0,0,0,.3.975l.942,1.415A1.763,1.763,0,0,0,8,28.21h3.4a1.763,1.763,0,0,0,1.468-.787l.942-1.415a1.762,1.762,0,0,0,.3-.975l0-2.113H5.29l0,2.113ZM0,9.7a9.643,9.643,0,0,0,2.4,6.379,15.834,15.834,0,0,1,2.877,5.039c0,.014.006.043.006.043h8.829c0-.014,0-.028.006-.043a15.834,15.834,0,0,1,2.877-5.039A9.7,9.7,0,1,0,0,9.7ZM9.7,5.289A4.413,4.413,0,0,0,5.289,9.7a.882.882,0,0,1-1.763,0A6.178,6.178,0,0,1,9.7,3.526a.882.882,0,0,1,0,1.763Z" transform="translate(0 0)"></path>
-                        </svg>
-
+                        <div class="wrapper">
+    
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19.394" height="28.21" viewBox="0 0 19.394 28.21">
+                                <path id="Icon_awesome-lightbulb" data-name="Icon awesome-lightbulb" d="M5.293,25.033a1.764,1.764,0,0,0,.3.975l.942,1.415A1.763,1.763,0,0,0,8,28.21h3.4a1.763,1.763,0,0,0,1.468-.787l.942-1.415a1.762,1.762,0,0,0,.3-.975l0-2.113H5.29l0,2.113ZM0,9.7a9.643,9.643,0,0,0,2.4,6.379,15.834,15.834,0,0,1,2.877,5.039c0,.014.006.043.006.043h8.829c0-.014,0-.028.006-.043a15.834,15.834,0,0,1,2.877-5.039A9.7,9.7,0,1,0,0,9.7ZM9.7,5.289A4.413,4.413,0,0,0,5.289,9.7a.882.882,0,0,1-1.763,0A6.178,6.178,0,0,1,9.7,3.526a.882.882,0,0,1,0,1.763Z" transform="translate(0 0)"></path>
+                            </svg>
+    
+                        </div>
+        
                     </div>
-    
-                </div>
-    
-                <h1>Добро пожаловать в Блокнотик!</h1>
 
+                </a>
+    
+                <h1>Добро пожаловать в <b>Блокнотик</b>!</h1>
                 
                 <form method="POST">
                     
@@ -205,6 +208,20 @@
 
     <script>
 
+        /* BTN POP IN/OUT */
+
+        $('button').click(function() {
+
+            btn = $(this).addClass('in');
+
+            setTimeout(function() {
+
+                btn.removeClass('in');
+
+            }, 250);
+            
+        });
+
         /* FOCUS ON INPUT */
         $('#email, #lock, #person').click(function() {
 
@@ -230,18 +247,6 @@
             }
 
         }
-        
-        $('button').click(function() {
-
-            btn = $(this).addClass('in');
-
-            setTimeout(function() {
-
-                btn.removeClass('in');
-
-            }, 250);
-            
-        })
 
         document.getElementById('n').addEventListener('input', function() {
 
@@ -267,67 +272,6 @@
             v();
 
         }, 500));
-
-        function validateEmail(e) {
-
-            var re = /\S+@\S+\.\S+/;
-            return re.test(e);
-
-        }
-
-        /* PLACHOLDER MANIPULATION */
-
-        $('input').focus(function() {
-
-            field = $(this);
-
-            field.css('color', '#1E2330');
-
-            fieldName = field.val();
-
-            if (fieldName == 'Электронная почта' || fieldName == 'Ваше имя' || fieldName == 'Пароль') {
-
-                field.val('');
-
-            }
-
-            if (fieldName == 'Пароль') {
-
-                field.attr('type', 'password');
-
-            }
-
-        });
-
-        $('input').focusout(function() {
-
-            field = $(this);
-
-            fieldID = field.attr('id');
-            fieldValue = field.val();
-
-            if (fieldValue == '') {
-
-                field.css('color', '#6e7267');
-
-                if (fieldID == 'n') {
-
-                    field.val('Ваше имя');
-
-                } else if (fieldID == 'e') {
-
-                    field.val('Электронная почта');
-
-                } else {
-
-                    field.attr('type', 'text');
-                    field.val('Пароль');
-
-                }
-
-            }
-
-        });
 
         /* Email */
 
@@ -366,10 +310,14 @@
                             $('.unique').css('opacity', 1);
                             $('#ee').css('opacity', 1);
                             e = false;
+
+                            v();
                             
                         } else {
                             
                             e = true;
+
+                            v();
 
                         }
 
@@ -432,6 +380,67 @@
             v();
 
         }, 500));
+
+        function validateEmail(e) {
+
+            var re = /\S+@\S+\.\S+/;
+            return re.test(e);
+
+        }
+
+        /* PLACEHOLDER MANIPULATION */
+
+        $('input').focus(function() {
+
+            field = $(this);
+
+            field.css('color', '#1E2330');
+
+            fieldName = field.val();
+
+            if (fieldName == 'Электронная почта' || fieldName == 'Ваше имя' || fieldName == 'Пароль') {
+
+                field.val('');
+
+            }
+
+            if (fieldName == 'Пароль') {
+
+                field.attr('type', 'password');
+
+            }
+
+        });
+
+        $('input').focusout(function() {
+
+            field = $(this);
+
+            fieldID = field.attr('id');
+            fieldValue = field.val();
+
+            if (fieldValue == '') {
+
+                field.css('color', '#6e7267');
+
+                if (fieldID == 'n') {
+
+                    field.val('Ваше имя');
+
+                } else if (fieldID == 'e') {
+
+                    field.val('Электронная почта');
+
+                } else {
+
+                    field.attr('type', 'text');
+                    field.val('Пароль');
+
+                }
+
+            }
+
+        });
 
     </script>
 
